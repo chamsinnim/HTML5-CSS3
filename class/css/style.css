@@ -1,0 +1,402 @@
+@charset "utf-8";
+/*@import url(fonts.css); 이 방식으로도 가능하다.*/
+@import "fonts.css";
+/*폰트는 위에 적용시키는 게 좋다.*/
+/* stylesheet 초기화 */
+html, body{
+    margin: 0;
+}
+html{
+    font-size: 10px;/*rem단위 설명을 하기 위해 적용하셨음*/
+}
+body{
+    background: #fff;
+    color: #181818;
+    font-size: 1.4rem; 
+    /*root(10px)를 기준으로 곱해준다. em은 16px를 기준으로 곱한다.*/
+    font-family: 'Noto sans Regular';
+    line-height: 1.2; /**/
+}
+/*건너뛰기 링크와 숨김 콘텐츠*/
+.a11y{
+/* a는 inline 속성이기 때문에 백그라운드 컬러를 보면 다르다는 것을 알 수 있다.
+inline 요소에는 width와 height를 사용할 수 없지만, display로 속성값을 바꾸면 사용할 수 있다.d:b */
+    background: yellow;
+    display: none;
+    /* display: none;은 없는 존재로 만든다. */
+}
+.a11y-hidden, legend{
+    position: absolute;
+    /*position: absolute;
+    left: -999999em;이런 식으로 hidden값을 만들어 준다.그러나 opera에서 이슈가 날 수 있어서 밑의 방식을 이용한 것이다.*/
+    width: 1px;
+    height: 1px;/*크기값을 이렇게 주는 건 시각 장애인들을 배려한 것이다.*/
+    margin: -1px;
+    /*overflow: hidden; 이 방법으로도 hidden값을  만들 수 있다.*/
+    clip: rect(0 0 0 0);/* 구형 버전*/
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+  
+}
+/*링크 스타일*/
+a:link, a:visited {
+    color: inherit;
+    text-decoration: none; 
+}/*a:link는 방문한 적이 없는 태그, a:visited는 방문한 적이 있는 태그*/
+a:hover, a:focus{
+    color: #f00;
+}/* 위 가상요소는 우선순위 문제가 있기 때문에 위 순서로 해줘야한다.
+a:hover는 마우스를 위에 올렸다. 
+a:focus는 포커스를 받아서 커서가 깜빡이고 있다.*/
+/* wrapper */
+.wrapper{
+    /* 이 elment는 block요소이다. 따라서 백그라운드 컬러를 보면 다르다는 것을 알 수 있다. */
+   /* background: silver url(images/bg_flower.png) no-repeat 50% 0;*/ /*첫번째 주는 게 x축, 두번째는 y축*/
+    /*앞에는 위치 / 뒤에는 크기값을 사용한다. 50% 0 / 500px 600px */ /* fixed 고정시킨다. */
+    background: yellow;
+    background-image: url(images/bg_flower.png), linear-gradient(to bottom, #999 0%, #eee 70%, #fff 80%, #fff 100%); /*순서를 유의할 것. 앞에 있는 게 위로 간다.*/
+    background-repeat: no-repeat, repeat /*앞에 있는 이미지는 no-repeat, 뒤에 있는 gradient는 repeat*/;
+    background-position: 50% 30px, 0, 0;
+    height: 100vh;
+    /* vh는 viewport height를 의미한다. h10vh, 현재는 임시설계 */
+}
+.header, .visual, .main-content, .slogan, .footer{
+    box-sizing: border-box;
+    /*위 클래스들에 box-sizing을 넣는 이유는 일관적인 디자인을 하는데 편리하기 때문이다. 
+    이렇게 하면 중간에 padding값들을 바꾸어도 중간에 삐죽 튀어나오지 않는다.*/
+    /*box-sizing CSS 속성은 요소의 너비와 높이를 계산하는 데에 
+      사용되는 기본적인 CSS box model 대체하기 위해 사용된다.
+    09.북마크 참고*/
+    /*아래는 기본 CSS box model이다.*/
+    /* border: 10px solid red; */
+    /* 위는 대표 속성이다. 원래는 아래처럼 작성했다.
+    border-width: 10px;
+    border-style: solid; 
+    border-color: red;*/
+    /* padding: 10px; */
+    /* 단축 표현 top right bottom left 시계방향
+    top (left, right) bottom
+    (top, bottom) (left, right)
+    all */
+    width: 940px;/* w940px */
+    margin: 0px auto;
+    /*auto margin이 적용되려면 width값이 있어야 한다. 
+    이렇게 해야 auto를 했을때,
+    남은 값을 반으로 나눠서 가운데 정렬하는 것처럼 보일 수 있다.
+    */
+}
+/*헤더*/
+.header{
+    background:#fff;
+    position: relative;
+    padding: 0 30px 35px;
+    border-radius: 0 0 15px 15px; /*왼쪽상단부터 시계방향으로 진행된다.*/
+}
+/*로고*/
+.logo{
+    margin: 0;
+    position: absolute;
+    top: 45px;
+    left: 65px;
+}
+.logo a, .logo img{
+    display: block;
+}
+/*안내링크*/
+.info-menu{
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 2px 0;
+    text-transform: uppercase;
+} 
+.info-menu a{
+    display: block;
+    padding: 8px 0 8px 8px;
+}
+.info-menu li:not(:last-child) a::after/*해석: last-child 빼고 전부*/{
+    content: ":";
+    padding-left: 8px;/*인라인은 상하가 아닌 좌우 padding, margin 값에는 영향을 받는다.*/
+}
+/*안내 링크(내가 만든 코드)
+.info-menu{
+    background: pink;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+.info-menu li a{
+    display: block;
+    padding: 5px 8px;
+}
+.info-menu li a::before{
+    content: ":";
+    position: relative;
+}*/
+.main-menu{
+    background-color: #f2752e;
+    background-image: linear-gradient(to bottom,#eaac2e 0%, #f2752e 35%, #f2752e 70%, #eaac2e 100%);/* %는  */
+    /*선형 그라디언트이고 to bottom은 위에서 아래로, 45deg 줄 수도 있다.*/
+    list-style: none;
+    margin: 0;
+    padding-left: 225px;
+    display: flex;
+    height: 45px;
+}
+.main-menu > li {
+    flex: 1 0 auto;
+    text-align: center;
+    line-height: 45px;
+}
+.main-menu > li{ 
+    /* > 는 바로 밑에 있는 자식요소를 선택한다.*/
+    float: left; 
+    /*부모 요소의 노랑색이 사라진 이유:모든 자식요소가 float 되면서 부모가 설자리를 잃어버린 상황.*/
+    font-family: "Noto Sans Bold";/* 이렇게 하면 상속요소에 따라 이 밑의 li 속성 값도 바뀐다.*/
+    position: relative;
+}
+/*따라서 이렇게 한다. 구조적으로 설계한 후 */
+.main-menu > li > a {
+    line-height: 45px;/*한줄의 높이*/
+    font-family: "Noto Sans Bold";
+    color: #fff;
+    font-size: 1.6rem;
+    border-left: 1px solid #fff;
+    display:block;
+    padding: 0 20px;
+    text-shadow: 1px 0px 0 #000, 0px 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000; /* x 좌표, y 좌표, 블러값, 색상 이렇게 겹칠 수 있다.*/
+}
+.main-menu > li > a:hover{
+    color: #ff0;
+}
+.main-menu > li > a:hover::after{
+    display: block;
+    content:"";
+    height: 2px;
+    background: #000;
+    width: 70%;/**/
+    margin: 0 auto;
+}
+.main-menu ul{
+    list-style: none;
+    margin:0;
+    padding-left: 0;
+    position: absolute;
+    display: none;
+
+}
+/*내가 만든 메인 메뉴
+.main-menu{
+    background: pink;
+    list-style: none;
+    margin: 0;
+    padding-left: 225px;
+    display: flex;
+    flex: 1 1 auto;
+}
+.about-html{
+    background: yellowgreen;
+    list-style: none;
+    padding: 5px;
+    display: flex;
+    flex: 1 1 auto;
+}
+.about-css{
+    display: none;
+}
+.web-standard{
+    display: none;
+}
+.web-accessibility{
+    display: none;
+}
+.qna{
+    display: none;
+}
+.archive{
+    display: none;
+}*/
+/*비주얼*/
+@keyframes text-ani{
+    from{
+        font-size: 12px;
+       /* color: hsla(0,100%, 50%, 0)/*  , 명도, 밝기, 투명*/
+       opacity: 0;/* 아예 박스자체도 투명하게 하려면 opacity */
+       /*top: 0;
+       left: 0;*/
+       transform: translate(0, 0);/*첫번째는 x좌표인자, 두번째는 y좌표인자*/
+    }
+    to{
+        font-size: 24px;
+         /*color: hsla(0,100%, 50%, 1)/*  , 명도, 밝기, 투명*/
+        opacity: 1;
+        /*top: 75px;
+        left: 300px;*/
+        transform: translate(400px, 75px);
+    }
+}/*선언한 것일뿐 vistal-text를 통해 실행할 애니메이션 이름과 실행시간을 알려줘야 한다.*/
+@keyframes flower-ani{
+    0%{ opacity: 1;}
+    100%{opacity: 0;}
+}/* % 는 얼마든지 디테일하게 만들 수 있다.*/
+.visual{
+    height: 120px;
+    position: relative;
+}
+.visual-text{
+    opacity: 0;
+    /*position: absolute;/*상위요소를 체크해야 배치할때 실수하지 않는다. p:s */
+    /* background: yellow;
+    animation-name: text-ani;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;/*forwards 끝난지점에서 멈춘다., backwards 다시 처음으로 돌아간다.*/
+    /*animation-iteration-count: infinite; 무한으로 실행된다.
+    animation-direction: alternate; /*처음에는 순반향 다음에는 역방향*/
+    /*animation-timing-function: ease-in-out;/*크롬에 북마크해놈*/
+    /* animation-delay: 2s;
+    animation-play-state: paused;/*비디오의 일시정지와 똑같은 반응. 제어하기위한 반응이다. running , pause 
+    이는 내부에서 적용하는 속성이 아닌 외부에서 적용하는 속성이다. 
+    infinite는 내부에서 적용하며 무한으로 실행되는 것이기 때문에 위 속성은 이 안에서는 animation 속성에서는 잘 사용하지 않는다.  */
+    /*animation: text-ani 5s forwards alternate ease-in-out 2s running; /* 무조건 앞에 있는게 duration, 뒤에 있는게 delay*/
+   animation: text-ani 2s forwards ease-in-out;
+}
+/*내가 만든 꽃 애니메이션*/
+/*@keyframes flower-ani{
+    from{
+       opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+*/
+.visual::before, .visual::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: flower-ani 2s infinite alternate;
+}
+.visual::before{
+    background: url(/Users/sunguk/FDS04/project/css/images/ani_flower_04.png) no-repeat 0px -15px/* x축 y축 */,
+    url(/Users/sunguk/FDS04/project/css/images/ani_flower_02.png) no-repeat 670px 0px;
+    /*animation: flower-ani 3s forwards alternate ease-in-out running; 내가 짠거*/
+}
+.visual::after{
+    background: url(/Users/sunguk/FDS04/project/css/images/ani_flower_03.png) no-repeat 300px 0,
+    url(/Users/sunguk/FDS04/project/css/images/ani_flower_01.png) no-repeat 800px 15px;
+    /*animation: flower-ani 5s backwards alternate ease-in-out running;내가 짠거*/
+    animation-delay: 1s;
+}
+
+/*메인 콘텐츠*/
+.main-content{
+    background: #fff;
+    border-radius: 15px 15px 0 0;
+    height: 60vh;
+    padding: 30px;
+    /*overflow: hidden;
+    auto를 사용하면 스크롤바가 생성될 수 있다.
+    따라서 이 또한 트릭일뿐 해결책이 될 수 없다.
+    따라서 main-content::after를 이용한다.*/
+
+    /*.main-content::after{
+    이는 inline 요소이며 :: 콜론은 가상요소 선택자이다. 
+    따라서, 블록으로 바꿔서 clear: both;를 이용하여 float issue를 해결한다. 
+     content: ""; 
+     display: block;
+     clear: both; 
+    }*/
+    display: flex;
+    /*flex-direction: row; 기본적으로 flex-direction은 row를 가리킨다.*/
+    justify-content: space-between;
+    /*flex-flow: wrap;/*개별 속성, 이는 흐름을 제어한다.*/
+    flex-flow: row nowrap;/*direction과 함께 제어하고 싶을때*/
+   /*align-items: center;*/
+   /*교차축을 정렬해준다. 만일 교차축이 가로일때는 중간지점으로 간다.*/
+}
+/*.group{
+    /*background: pink;*/
+    /*height: 20vh;
+    /*margin: 0 15px;
+}*/
+
+/*컬럼 1*/
+.group1{
+    width: 250px;
+    /*float: left;*/
+    position: relative;
+    /*left: -100px;*/
+    /*order: 2;*/
+}
+/*로그인*/
+.login{
+    background: orange;
+    padding: 10px;
+}
+.login-heading{
+    margin: 0;
+    padding: 10px;
+    color: yellow;
+    font-size: 1.6rem; /*rem단위는 html에 1.5곱하기 된다. em단위는 부모의 폰트사이즈를 기준으로 적용된다.  */
+}
+.login fieldset{
+    border: 0 none; /* 0하고 none은 왜 같이 준거지?? */
+    padding: 0px;
+    margin: 0;
+    background: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+}
+.user-email label{
+    display: inline-block;
+    width: 4em;
+}
+.user-pw label{
+    display: inline-block;
+    width: 4em;
+}
+.btn-login{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 1px;
+    right: 1px;
+}
+.member-info{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/*컬럼 2*/
+.group2{
+    background: tomato;
+    width: 380px;
+    /*float: left;*/
+    /*order: 1;
+    align-self: flex-end; items와 self가 충돌하면 self가 이긴다.*/
+}
+/*컬럼 3*/
+.group3{
+    background: pink;
+    width: 190px;
+   /*float: left;*/
+   /*order: 3;*/
+/*슬로건*/
+}
+.slogan{
+    /*clear: both; /*왼쪽이건 오른쪽이건 해제해줘*/
+    background: purple;
+    height: 10vh;
+    /*margin-top: 200px;/*mt50px*/
+}
+/*푸터*/
+.footer{
+    background: skyblue;
+    height: 10vh;
+}
