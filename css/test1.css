@@ -1,0 +1,71 @@
+@charset "utf-8";
+/*스타일 초기화*/
+html, body {
+    margin : 0;
+}
+body{
+    background: #fff;
+}
+/*건너뛰기 링크*/
+.a11y{
+    background: yellow;
+    display: none;
+}
+/*wrapper*/
+.wrapper{
+    background: silver;
+    height: 100vh;
+}
+.header, .visual, .main-content, .slogan, .footer{
+    box-sizing: border-box;
+    width: 940px;
+    margin: 0 auto;
+}
+/*header*/
+.header{
+    background: yellow;
+    height: 10vh;
+}
+/*visual*/
+.visual{
+    background: orange;
+    height: 10vh;
+}
+/*main-content*/
+.main-content{
+    background: blue;
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-flow: row nowrap;
+}
+/*.group{
+    background: pink;
+    height: 20vh;
+}
+/*컬럼1*/
+.group1{
+    background: aqua;
+    width: 250px;
+}
+/*컬럼2*/
+.group2{
+    background: tomato;
+    width: 380px;
+}
+/*컬럼1*/
+.group3{
+    background: pink;
+    width: 190px;
+}
+/*슬로건*/
+.slogan{
+    background: purple;
+    height: 10vh;
+}
+ /*푸터*/
+ .footer{
+     background: skyblue;
+     height: 10vh;
+ }

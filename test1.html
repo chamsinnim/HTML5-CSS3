@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = "ko">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0"
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!--meta http-equive = "content-type" content="text/html;charset=utf-8" 
+     옛날 HTML 4.01. XHTML1.0에서 사용하던 인코딩 방식-->
+    <head>
+        <title>웹카페 - HTML5, CSS3, Sass, RWD</title>
+        <link rel="stylesheet" type="text/css" href="./css/test1.css">
+        <link rel="shortcut icon" type="" href="/Users/sunguk/FDS04/project/images/common/webcafe.ico">
+        <!--이 부분은 어떻게 해결하면 되지? 해당 icon 경로 복사를 통해서 해결.-->
+    </head>
+    <body>
+        <!--웹 접근성 측면에서 <body>에 건너뛰기 링크를 꼭 넣어주자-->
+        <a href="#content" class="a11y">본문 바로가기 링크</a>
+        <div class="wrapper">
+            <header class="header">
+                <h1>
+                <a href="index.html">웹카페</a>
+                </h1>
+                <ul>
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                    <li><a href="#">english</a></li>
+                </ul>                  
+
+
+            </header>
+            <div class="visual">
+                비주얼
+            </div>
+            <main class="main-content" id="content">
+                    <div class="group group1">컬럼1</div>
+                    <div class="group group2">컬럼2</div>
+                    <div class="group group3">컬럼3</div>
+            </main>
+            <article class="slogan">슬로건</article>
+                <div class="footer-bg">
+                    <footer class="footer">
+                        푸터
+                    </footer>
+                </div>
+        </div>
+    </body>
+</html>
