@@ -13,7 +13,6 @@ body{
 }
 /*링크 스타일*/
 
-
 /*wrapper*/
 .wrapper{
     background: silver;
@@ -28,25 +27,38 @@ body{
 .header{
     background: yellow;
     height: 10vh;
+    display: none;
 }
 /*visual*/
+@keyframes text-ani{
+    0%{
+        font-size: 12px;
+        transform: translate(0, 0);
+    }
+    100%{
+        font-size: 24px;
+        transform: translate(400px, 75px);
+    }
+}
 .visual{
     background: orange;
     height: 10vh;
+}
+.visual-text{
+    font-family: sans-serif;
+    animation: text-ani 2s backwords alternate ease-in-out 2s;
 }
 /*main-content*/
 .main-content{
     background: blue;
     height: 60vh;
-    display: flex;
+    display: none;
     justify-content: space-between;
     padding: 30px;
     flex-flow: row nowrap;
 }
-/*.group{
-    background: pink;
-    height: 20vh;
-}
+/*비주얼*/
+
 /*컬럼1*/
 .group1{
     background: aqua;
