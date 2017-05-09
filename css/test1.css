@@ -45,8 +45,9 @@ body{
     height: 10vh;
 }
 .visual-text{
+    /*display: inline-block;*/
     font-family: sans-serif;
-    animation: text-ani 2s backwords alternate ease-in-out 2s;
+    animation: text-ani 2s alternate ease-in-out 2s;
 }
 /*main-content*/
 .main-content{
