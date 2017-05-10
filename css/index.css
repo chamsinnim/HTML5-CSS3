@@ -19,10 +19,9 @@
 .main-content{
     background: blue;
     width: 940px;
-    height: 400px;
-    padding: 23px;
+    height: 360px;
+    padding: 20px 0;
     margin: 0 auto;
-    box-sizing: border-box;
 }
 .main-content::after{
     content: "";
@@ -30,46 +29,20 @@
     clear: both;
 }
 .group{
-    float: left;
-    margin-right: 23px;
-    margin-bottom: 23px;
+    width: 300px;
 }
 .group1{
     background: yellowgreen;
-    width: 282px;
-    height: 165px;
+    float: left;
 }
 .group2{
     background: deepskyblue;
-    width: 284px;
-    height: 165px;
+    margin: 0 20px;
+    float: left;
 }
 .group3{
     background: #f33;
-    width: 282px;
-    height: 165px;
-    margin-right: 0;
-}
-.group4{
-    background: lightblue;
-    width: 206px;
-    height: 166px;
-}
-.group5{
-    background: cyan;
-    width: 206px;
-    height: 166px;
-}
-.group6{
-    background: rosybrown;
-    width: 207px;
-    height: 166px;
-}
-.group7{
-    background: gold;
-    width: 206px;
-    height: 166px;
-    margin-right: 0;
+    float: left;
 }
 .slogan{
     background: olive;
