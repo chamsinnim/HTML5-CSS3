@@ -39,20 +39,14 @@ a:hover, a:focus{
 }
 /*info-menu*/
 .info-menu{
-    margin: 0;
-    padding: 0;
     list-style: none;
-    float: right;
+    padding-left: 0;
+    margin: 0;
 }
 .info-menu li{
-    display: inline-block;
+    float: left;
 }
-.info-menu li a{
-    padding-right: 5px;
-}
-.info-menu li a::after{
-    content:":";
-}
+/*비주얼*/
 .visual{
     background: green;
     height: 100px;
