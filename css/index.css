@@ -23,6 +23,7 @@ body{
     background: #ccc;
     width: 100%;
 }
+
 /*링크 스타일*/
 a:link, a:visited{
     color: inherit;
@@ -37,14 +38,49 @@ a:hover, a:focus{
     width: 940px;
     margin: 0 auto;
 }
+/*logo*/
+.logo{
+    display: none;
+}
 /*info-menu*/
+/*float로 움직여보기*/
+/*
 .info-menu{
     list-style: none;
     padding-left: 0;
     margin: 0;
+    float: right;
 }
 .info-menu li{
     float: left;
+}
+.info-menu a::after{
+    content:":";
+    padding-left: 10px;
+}
+.info-menu a{
+    padding: 8px 0 8px 8px;
+}
+.info-menu li:last-child a::after{
+    content:"";
+}
+*/
+/*flex로 움직여보기*/
+.info-menu{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 300px;
+    right: 0;
+}
+.info-menu a{
+    display: block;
+}
+.info-menu a::after{
+    content: ":";
+    padding-left: 10px;
 }
 /*비주얼*/
 .visual{
