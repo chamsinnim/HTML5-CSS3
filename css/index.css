@@ -10,7 +10,7 @@ html{
 body{
     background: #fff;
     color: #181818;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-family: 'Noto Sans Regular';
     line-height: 1.2;
 }
@@ -19,9 +19,12 @@ body{
     display: none;
 }
 /*숨김 콘텐츠*/
-.wrapper{
-    background: #ccc;
-    width: 100%;
+.a11y-hidden{
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
 }
 
 /*링크 스타일*/
@@ -32,16 +35,33 @@ a:link, a:visited{
 a:hover, a:focus{
     color: #f00;
 }
-.header{
-    background: yellow;
-    height: 100px;
+/*wrapper*/
+.wrapper{
+    background: #ccc;
+    width: 100%;
+}
+.header, .visual, .main-content, .slogan, .footer{
+    box-sizing: border-box;
     width: 940px;
     margin: 0 auto;
+}
+/*헤더*/
+.header{
+    background: #fff;
+    margin: 0 auto;
     position: relative;
+    padding: 0 30px 35px;
+    border-radius: 0 0 15px 15px;
 }
 /*logo*/
 .logo{
-    display: none;
+    margin:0;
+    position: absolute;
+    top: 45px;
+    left: 65px;
+}
+.logo a{
+    display: block;
 }
 /*info-menu*/
 /*float로 움직여보기*/
@@ -67,7 +87,7 @@ a:hover, a:focus{
 }
 */
 /*flex로 움직여보기*/
-.info-menu{
+/*.info-menu{
     background: pink;
     list-style: none;
     margin: 0;
@@ -86,8 +106,196 @@ a:hover, a:focus{
     position: relative;
     top:-2px;
 }
+*/
 /*display: inline-block으로 움직여보기*/
+.info-menu{
+    background: pink;
+    list-style: none;
+    margin: 0;
+    padding: 2px 0;
+    text-align: right;
+}
+.info-menu li, .info-menu a{
+    display: inline-block;
+}
+.info-menu a{
+    padding: 8px 0 8px 8px;
+    text-transform: uppercase;
+}
+.info-menu a::after{
+    content:":";
+    padding-left: 10px;
+}
+.info-menu li:last-child a::after{
+    content: "";
+    padding-left: 0;
+}
+/*info-menu li:last-child{
+    width: 70px;
+    overflow: hidden; 
+}
+이렇게 했을때 올라가는 이슈는 어떻게 해결할 것인가.
+*/
 /*nav*/
+/*flex 이용*/
+/*
+main-menu{
+    background-color: #f2752e;
+    background-image: linear-gradient(to bottom, #eaac2e 0%, #f2752e 35%, #f2752e 65%, #eaac2e 100%);
+    margin: 0;
+    list-style: none;
+    border-top: 2px solid #000;
+    padding-left: 225px;
+    display: flex;
+    height: 45px;
+    border-radius:  0 0 5px 5px;
+}
+.main-menu a{
+    outline: 0;
+}
+.main-menu > li {
+    flex-grow: 1;
+    position: relative;
+}
+    /*강사님은 flex: 0 1 auto*/
+/*.main-menu > li > a{
+    display: block;
+    line-height: 45px;
+    font-family: "Noto Sans Bold";
+    color: #fff;
+    font-size: 1.6rem;
+    border-left: 1px solid #fff;
+    text-align: center;
+    text-shadow: 1px 0 0 rgba(0,0,0,0.5), 0 1px 0 rgba(0,0,0,0.5), -1px 0 0 rgba(0,0,0,0.5), 0 -1px 0 rgba(0,0,0,0.5);
+}
+.main-menu > li > a:hover,
+.main-menu > li > a:focus{
+    color: #ff0;
+}
+.main-menu > li > a:hover::after,
+.main-menu > li > a:focus::after{
+    content:"";
+    display: block;
+    margin: 0 auto;
+    height: 2px;
+    background: black;
+    width: 70%;
+}
+.main-menu ul{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    top: 47px;
+}
+.main-menu ul li, .main-menu ul a{
+    display: inline-block;
+}
+.main-menu ul a{
+    padding: 6px 0 5px 0;
+    margin-right: 10px;
+}
+.main-menu ul a::before{
+    content: "r";
+    font-family: 'webcafeIcon';
+    vertical-align: middle;
+}
+.main-menu ul a:hover::before,
+.main-menu ul a:focus::before{
+    content:"c";
+}
+.about-css{
+    display: none;
+}
+.web-standard{
+    display: none;
+}
+.web-accessibility{
+    display: none;
+}
+.qna{
+    display: none;
+}
+.archive{
+    display: none;
+}*/
+/*float 이용*/
+.main-menu{
+    background-color: #f2752e;
+    background-image: linear-gradient(to bottom, #eaac2e 0%, #f2752e 35%, #f2752e 65%, #eaac2e 100%);
+    list-style: none;
+    margin: 0;
+    padding-left: 225px;
+    height: 45px;
+    border-top: 2px solid #181818;
+    border-radius: 0 0 5px 5px;
+}
+.maint-menu a{
+    outline: 0;
+}
+.main-menu > li{
+     float: left;
+     position: relative;
+}
+.main-menu > li > a{
+    display: block;
+    line-height: 45px;
+    font-family: "Noto Sans Bold";
+    color: #fff;
+    font-size: 1.6rem;
+    border-left: 1px solid #fff;
+    padding: 0 20px;
+    text-shadow: 1px 0 0 rgba(0,0,0,0.5), 0 1px 0 rgba(0,0,0,0.5), -1px 0 0 rgba(0,0,0,0.5), 0 -1px 0 rgba(0,0,0,0.5);
+}
+.main-menu > li > a:hover,
+.main-menu > li > a:focus{
+    color: #ff0;
+}
+.main-menu > li > a:hover::after,
+.main-menu > li > a:focus::after{
+    content: "";
+    display: block;
+    height: 2px;
+    background: #000;
+}
+.main-menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    top: 47px;
+}
+.about-css{
+    display: none;
+}
+.web-standard{
+    display: none;
+}
+.web-accessibility{
+    display: none;
+}
+.qna{
+    display: none;
+}
+.archive{
+    display: none;
+}
+.main-menu ul li, .main-menu ul a{
+    display: inline-block;
+    padding: 6px 0 5px 0;
+    margin-right: 10px;
+}
+.main-menu ul a::before{
+    content: "r";
+    font-family: 'WebcafeIcon';
+    vertical-align: middle;
+}
+.main-menu ul a:hover::before,
+.main-menu ul a:focus::before{
+    content: "c";
+}
 /*비주얼*/
 .visual{
     background: green;
