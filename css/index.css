@@ -19,14 +19,14 @@ body{
     display: none;
 }
 /*숨김 콘텐츠*/
-.a11y-hidden{
+.a11y-hidden, legend{
     width: 1px;
     height: 1px;
     margin: -1px;
     position: absolute;
     clip: rect(0, 0, 0, 0);
+    overflow: hidden;
 }
-
 /*링크 스타일*/
 a:link, a:visited{
     color: inherit;
@@ -37,8 +37,10 @@ a:hover, a:focus{
 }
 /*wrapper*/
 .wrapper{
-    background: #ccc;
-    width: 100%;
+ background-image: url(images1/bg_flower.png), linear-gradient(to bottom, #999 0%, #eee 70%, #fff 80%, #fff 100%);
+ background-repeat: no-repeat, repeat;
+ background-position: 50% 30px, 0 0;
+ height:100vh;
 }
 .header, .visual, .main-content, .slogan, .footer{
     box-sizing: border-box;
@@ -109,7 +111,7 @@ a:hover, a:focus{
 */
 /*display: inline-block으로 움직여보기*/
 .info-menu{
-    background: pink;
+    background: #fff;
     list-style: none;
     margin: 0;
     padding: 2px 0;
@@ -284,7 +286,7 @@ main-menu{
 }
 .main-menu ul li, .main-menu ul a{
     display: inline-block;
-    padding: 6px 0 5px 0;
+    padding: 3px 0 5px 0;
     margin-right: 10px;
 }
 .main-menu ul a::before{
@@ -297,18 +299,58 @@ main-menu{
     content: "c";
 }
 /*비주얼*/
-.visual{
-    background: green;
-    height: 100px;
-    width: 940px;
-    margin: 0 auto;
+@keyframes text-ani{
+   from{
+       font-size: 12px;
+       opacity: 0;
+       transform: translate(0,0);
+   }
+   to{
+       font-size: 24px;
+       opacity: 1;
+       transform: translate(400px,75px);
+   }
 }
+@keyframes flower-ani{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.visual{
+    height: 120px;
+    position: relative;
+}
+.visual-text{
+    animation-name: text-ani;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+.visual::before, .visual::after{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: flower-ani 2s infinite alternate;
+}
+.visual::before{
+    background: url(images1/ani_flower_01.png) no-repeat 0 -15px, url(images1/ani_flower_02.png) no-repeat 670px 0;
+}
+.visual::after{
+    background: url(images1/ani_flower_03.png) no-repeat 300px 0, url(images1/ani_flower_04.png) no-repeat 800px 15px;
+    animation-delay: 1s;
+}
+/*main-content*/
 .main-content{
-    background: blue;
-    width: 940px;
+    background: pink;
     height: 360px;
     padding: 20px 0;
-    margin: 0 auto;
+    border-radius: 10px 10px 0 0;
 }
 .main-content::after{
     content: "";
@@ -319,8 +361,37 @@ main-menu{
     width: 300px;
 }
 .group1{
-    background: yellowgreen;
     float: left;
+}
+.login{
+    padding: 10px;
+    border-radius: 10px;
+    background: radial-gradient(circle at top right, #eaac2e, #f2752e);
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.5);
+}
+.login-heading{
+   margin: 0;
+   padding-left: 10px;
+   font-size: 1.6rem;
+   color: #ff0;
+}
+.login-form{
+    background: #fff;
+    margin-top: 10px;
+    padding: 10px 10px 0 10px;
+    border-radius: 10px 10px 0 0;
+}
+.login-form fieldset{
+    border: 0;
+    padding: 0 0 5px 0;
+    margin: 0;
+    border-bottom: 2px solid #aaa;
+    position: relative;
+}
+.btn-login{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .group2{
     background: deepskyblue;
