@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+body{
+    margin: 50px;
+}
+.text-shadow{
+    background: yellow;
+    font-size: 60px;
+}
+.box-wrapper{
+    width: 200px;
+}
+.text-box{
+    color: red;
+    font-size: 10px;
+    /*margin-top: -100%;*/
+    /*음수 마진의 백분율은 부모 상자의 너비를 기준으로 동작한다.*/
+    /*margin-left: -10px;*/
+}
+.wrapper{
+    margin-top: 100px;
+    background: yellow;
+    width: 500px;
+    height: 500px;
+    border: 2px solid #000;
+}
+.wrapper [class^="box"]{
+    width: 50%;
+    height: 50%;
+    background: skyblue;
+    float: left;
+    border: 10px solid #f00;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    /*float시켰을때 음수 마진은 float된 것들을 끌어당긴다.*/
+    margin: -10px;
+}

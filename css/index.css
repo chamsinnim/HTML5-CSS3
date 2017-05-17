@@ -20,6 +20,7 @@ body{
 }
 /*숨김 콘텐츠*/
 .a11y-hidden, legend{
+    background: #f00;
     width: 1px;
     height: 1px;
     margin: -1px;
@@ -348,9 +349,12 @@ main-menu{
 /*main-content*/
 .main-content{
     background: pink;
-    height: 360px;
-    padding: 20px;
+    min-height: 400px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
     border-radius: 10px 10px 0 0;
+    /*flex-flow: row nowrap; 검증되지 않은 값이다.*/
 }
 .main-content::after{
     content: "";
@@ -451,12 +455,69 @@ main-menu{
     position: relative;
     top: 2px;
 }
-
-
+/*Validation*/
+.validation-list{
+    list-style: none;
+    padding-left: 0; 
+    margin: 20px 0 0 0;
+}
+.validation-list a{
+    background: url(images1/validation_icon.png) no-repeat 15px 50% , linear-gradient(to bottom, #fff, #aaa);
+    display: block;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    margin: 10px 0;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 45px;
+}
+.validation-list li:first-child{
+    margin-bottom: 10px;
+}
+/*웹 관련 용어*/
+.term{
+    background: #ccc linear-gradient(to bottom, #eee, #ccc);
+    margin-top: 20px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    padding: 15px;
+}
+.term-heading{
+    margin: 0;
+    font-size: 1.6rem;
+    font-family: 'Noto Sans Bold', sans-serif;
+}
+.term-list{
+    margin: 10px 0 0 0;
+}
+.term::after{
+    content:"";
+    display: block;
+    clear: both;
+}
+.term-list dt{
+    float: right;
+    width: 145px;
+    color: #296897;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.term-list dd{
+    margin:0;
+}
+.term-list dd:nth-of-type(1){
+    float: left;
+}
+.term-list dd:nth-of-type(2){
+    float: right;
+    width: 145px;
+}
+/**/
 .group2{
     background: deepskyblue;
     margin: 0 20px;
     float: left;
+    line-height: 1.5;
 }
 .group3{
     background: #f33;
