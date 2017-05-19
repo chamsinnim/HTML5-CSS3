@@ -32,13 +32,16 @@ html, body{
 .group3{
     width: 470px;
     height: 470px;
-    float: right; 
+    float: right;
 }
 .group3::before{
     content: "";
     display: block;
     clear: both;
 }
-.group3 div{
-    float: right;
+.group3 div:nth-child(1), .group3 div:nth-child(2){
+    
+}
+.grop3 div:nth-child(3), .group3 div:nth-child(4){
+    margin-bottom: -235px;
 }

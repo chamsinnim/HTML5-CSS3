@@ -1,5 +1,16 @@
 @charset "utf-8";
 @import "fonts.css";
+@font-face {
+  font-family: 'fontello';
+  src: url('font/fontello/fontello.eot?82350914');
+  src: url('font/fontello/fontello.eot?82350914#iefix') format('embedded-opentype'),
+       url('font/fontello/fontello.woff2?82350914') format('woff2'),
+       url('font/fontello/fontello.woff?82350914') format('woff'),
+       url('font/fontello/fontello.ttf?82350914') format('truetype'),
+       url('font/fontello/fontello.svg?82350914#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 /*스타일 초기화*/
 html, body{
     margin: 0;
@@ -514,7 +525,7 @@ main-menu{
 }
 .group2{
     background: deepskyblue;
-    margin: 0 20px;
+    margin: 0 ;
     float: left;
     line-height: 1.5;
 }
@@ -525,6 +536,7 @@ main-menu{
    border-radius: 20px 20px 0 0;
    padding: 15px 25px 10px 25px;
    background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 60%, #fff 100%);
+   margin: 0 0 10px 0;
 }
 .search-form fieldset{
     margin: 0;
@@ -559,6 +571,57 @@ main-menu{
     font-size: 1.3rem;
     padding: 1px 10px;
 }
+/*공지사항 및 자료실*/
+.board{
+    position: relative;
+}
+a.tab{
+    color: #666;
+    border: 1px solid #aaa;
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(to bottom, #eee, #ccc);
+    padding: 4px;
+    font-size: 1.4rem;
+    border-bottom: none;
+}
+.notice-list, .pds-list {
+    padding-left: 0;
+    list-style: none;
+    position: absolute;
+}
+.board-subject::before {
+    content: "\e802";
+    font-family: 'fontello';
+    margin: 5px;
+}
+.board-date {
+    float: right;
+}
+.pds-more{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.pds-more::before{
+    content: "\e800";
+    font-family: 'fontello';
+    margin: 5px;
+}
+.notice-heading, .pds-heading{
+    display: inline-block;
+    margin: 0;
+}
+.pds-heading{
+    position: absolute;
+    top: 0;
+    left: 62px;
+}
+.tab:focus{
+    background: #fff;
+    color: #f00;
+    border-color: #f00;
+}
+
 .group3{
     background: #f33;
     float: left;
