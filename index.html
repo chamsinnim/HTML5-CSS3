@@ -166,10 +166,11 @@
                                     <time datetime="2017-05-10" class="board-date">2017.05.10</time>
                                 </li>
                                 <li>
-                                    <a href="#" class="board-subject">여러분들이 생각하는 웹 접근성에 대한 이야기를....</a>   
+                                    <a href="#" class="board-subject">여러분들이 생각하는 웹 접근성에 대한 이야기를 하면서 저에 대한 얘기를 해보도록 하겠습니다.</a>   
                                     <time datetime="2017-05-10" class="board-date">2017.05.10</time> 
                                 </li>
                             </ul>
+                             <a href="#" class="notice-more" title="자료실" target="_blank">더보기</a>
                         </div>
                         <div class="pds">
                             <h3 class="pds-heading">
@@ -208,9 +209,30 @@
                                 <a href="#" class="pds-more" title="자료실" target="_blank">더보기</a>
                         </div>
                  </div>
+            <div class="news">
+                <h2 class="news-heading">새소식</h2>
+                <a href="#" class="news-article">
+                    <article class="news-item">
+                        <h3 class="news-item-heading">
+                            W3C 사이트가 리뉴얼 되었습니다.
+                        </h3>
+                        <date class="news-item-date" datetime="2017-05-11">
+                            2017.05.11
+                        </date>
+                        <p class="news-item-brief">
+                            디자인 및 다양한 view환경을 고려하여 구성되어 있으며, 기존보다 최신 정보 및 개발자를 위한 기술 가이드도 찾기 쉽도록 구성되어 있습니다.
+                        </p>
+                        <figure>
+                            <img src="css/images/news.gif" alt="W3C 사이트 리뉴얼">
+                            <figcaption>W3C 리뉴얼</figcaption>
+                        </figure>
+                    </article>
+                </a>
+                <a href="#" class="news-more" target="_blank" title="더보기">더보기</a>
             </div>
+        </div>
             <div class="group group3">컬럼3</div>
-        </main>
+    </main>
         <article class="slogan">
             슬로건
         </article>
@@ -220,5 +242,15 @@
             </footer>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $(".tab").click(function(e){
+                e.preventDefault();
+                $(this).parent().parent().addClass("board-active")
+                .siblings().removeClass("board-active");
+            });
+        });
+    </script>
 </body>
 </html>

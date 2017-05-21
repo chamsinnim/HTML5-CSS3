@@ -283,22 +283,29 @@ main-menu{
 }
 .about-css{
     display: none;
+    left: 0;
 }
 .web-standard{
     display: none;
+    left: 0;
 }
 .web-accessibility{
     display: none;
+    left: -130px;
 }
 .qna{
     display: none;
+    left: -155px;
 }
 .archive{
     display: none;
+    right: 0;
 }
 .main-menu ul li, .main-menu ul a{
     display: inline-block;
-    padding: 3px 0 5px 0;
+}
+.main-menu ul a{
+    padding: 6px 0 5px 0;
     margin-right: 10px;
 }
 .main-menu ul a::before{
@@ -524,10 +531,8 @@ main-menu{
     width: 145px;
 }
 .group2{
-    background: deepskyblue;
-    margin: 0 ;
-    float: left;
-    line-height: 1.5;
+    background: skyblue;
+    width: 380px;
 }
 /*검색*/
 .search-form{
@@ -536,7 +541,6 @@ main-menu{
    border-radius: 20px 20px 0 0;
    padding: 15px 25px 10px 25px;
    background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 60%, #fff 100%);
-   margin: 0 0 10px 0;
 }
 .search-form fieldset{
     margin: 0;
@@ -560,7 +564,6 @@ main-menu{
     border: 1px solid #aaa;
     border-radius: 3px;
     padding: 1px 1px 1px 5px;
-    font-size: 1.3rem;
     margin-right: 4px;
 }
 .btn-search{
@@ -573,55 +576,79 @@ main-menu{
 }
 /*공지사항 및 자료실*/
 .board{
+    background: #666;
     position: relative;
-}
-a.tab{
-    color: #666;
-    border: 1px solid #aaa;
-    border-radius: 5px 5px 0 0;
-    background: linear-gradient(to bottom, #eee, #ccc);
-    padding: 4px;
-    font-size: 1.4rem;
-    border-bottom: none;
-}
-.notice-list, .pds-list {
-    padding-left: 0;
-    list-style: none;
-    position: absolute;
-}
-.board-subject::before {
-    content: "\e802";
-    font-family: 'fontello';
-    margin: 5px;
-}
-.board-date {
-    float: right;
-}
-.pds-more{
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-.pds-more::before{
-    content: "\e800";
-    font-family: 'fontello';
-    margin: 5px;
+    margin-top: 20px;
+    min-height: 170px;
 }
 .notice-heading, .pds-heading{
-    display: inline-block;
     margin: 0;
-}
-.pds-heading{
     position: absolute;
     top: 0;
-    left: 62px;
+    font-size: 1.4rem;
 }
-.tab:focus{
+.notice-heading{
+    left: 0;
+}
+.pds-heading{
+    left: 74px;
+}
+a.tab{
+    background: #eee linear-gradient(to bottom, #eee, #ccc);
+    border: 1px solid #aaa;
+    border-radius: 5px 5px 0 0;
+    color: #666;
+    display: block;
+    padding: 5px 10px;
+}
+.board-active .tab{
+    border-color: #f00 #f00 #fff #f00;
     background: #fff;
     color: #f00;
-    border-color: #f00;
 }
-
+.notice-list, .pds-list, .notice-more, .pds-more{
+    display: none;
+}
+.board-active [class$="list"],
+.board-active [class$="more"]{
+    display: block !important;
+}
+.notice-list, .pds-list{
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    padding-top: 40px;
+}
+.notice-list li,
+.pds-list li{
+    margin: 5px 0;
+}
+.notice-list li::before, .pds-list li::before {
+    content: "\e802";
+    font-family: 'fontello';
+}
+.ㅜnotice-list a,  .pds-list a{
+    display: inline-block;
+    width: calc(100% - 90px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.board-date{
+    float: right;
+}
+.notice-more, .pds-more{
+    position: absolute;
+    top: 0;
+    right: -8px;
+    padding: 8px;
+    
+}
+.notice-more::before, .pds-more::before{
+    content: "\e800";
+    font-family: 'fontello';
+    margin-right: 3px;
+}
 .group3{
     background: #f33;
     float: left;
