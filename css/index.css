@@ -747,7 +747,6 @@ a.tab{
 .event{
     position: relative;
     border-bottom: 1px solid #aaa;
-
 }
 .event-related [class$="heading"]{
     margin: 0;
@@ -757,10 +756,12 @@ a.tab{
     color: #f00;
 }
 .event-thumbnail{
+    display: inline-block;
     text-align: center;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.5);
 }
 .event-thumbnail img{
-    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.5);
+   
 }
 #event-detail p{
     margin: 10px 0;
@@ -792,6 +793,52 @@ a.tab{
 .btn-event-next{
     background-position: -40px;
 }
+/*관련 사이트*/
+.related{
+    margin-top: 10px;
+}
+.related-list{
+    background: #fff;
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 0 0;
+    width: 170px;
+    height: 25px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+.related-list:hover,
+.related-list:focus{
+    height: 125px;
+    padding: 10px 0;
+}
+.related-list a{
+    display: block;
+    line-height: 25px;
+    padding-left: 25px;
+}
+.favorite{
+    margin-top: 22px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #eee, #ccc);
+    padding: 0 10px;
+}
+.favorite-heading{
+    margin: 8px 0;
+}
+.favorite-heading span{
+    color: #f00;
+}
+.favorite-list{
+    margin: 0;
+    padding-left: 10px;
+    border: 1px solid #aaa;
+}
+
+/*슬로건*/
 .slogan{
     background: olive;
     height: 100px;
