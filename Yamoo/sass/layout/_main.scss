@@ -1,0 +1,289 @@
+@import 'sass/layout/grid';
+//banner
+.banner-img{
+    display: block;
+    background: url(../../images/banner/banner-01.jpg);
+    height: 440px;
+    width: $page-width - 20px;
+    margin-top: 42px;
+    margin-left: 10px;
+}
+.banner-list li{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #aaa;
+    border-radius: 100px;
+    margin-left: 10px;
+    margin-top: 27px;
+}
+.banner-list li:first-child{
+    margin-left: column-width(5);
+}
+.banner-list li:last-child{
+    background: #bd1d31;
+}
+//best-item & new-item
+.best-item-heading, .new-item-heading{
+    margin-left: $half-gutter-width;
+    margin-top: 42px;
+    font-size: 1.2rem;
+}
+.best-item-list-1, .best-item-list-2, .best-item-list-3, .best-item-list-4,
+.new-item-list-1, .new-item-list-2, .new-item-list-3, .new-item-list-4{
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    width: 250px;
+    height: 358px;
+    padding: 10px;
+    position: relative;
+    margin-top: 20px;
+}
+.best-item-1,{
+    display: block;
+    background: url(../../images/best-seller/bs-seller-01.jpg);
+    width: 230px;
+    height: 210px;
+}
+.best-item-2{
+    display: block;
+    background: url(../../images/best-seller/bs-seller-02.jpg);
+    width: 230px;
+    height: 210px;
+}
+.best-item-3{
+    display: block;
+    background: url(../../images/best-seller/bs-seller-03.jpg);
+    width: 230px;
+    height: 210px;
+}
+.best-item-4{
+    display: block;
+    background: url(../../images/best-seller/bs-seller-04.jpg);
+    width: 230px;
+    height: 210px;
+}
+.best-item-list-1 li:nth-child(2),
+.best-item-list-1 li:nth-child(4),
+.best-item-list-2 li:nth-child(2),
+.best-item-list-2 li:nth-child(4),
+.best-item-list-3 li:nth-child(2),
+.best-item-list-3 li:nth-child(4),
+.best-item-list-4 li:nth-child(2),
+.best-item-list-4 li:nth-child(4),{
+    margin-top: 20px;
+}
+//하트 버튼
+.btn-like{
+    background: #fff;
+    background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2036.8%22%20width%3D%2232%22%20height%3D%2232%22%3E%3Ctitle%3Eicon-like%3C%2Ftitle%3E%3Cg%20id%3D%22icon-like-Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22icon-like-%26%23xB808%3B%26%23xC774%3B%26%23xC5B4%3B_1%22%20data-name%3D%22%26%23xB808%3B%26%23xC774%3B%26%23xC5B4%3B%201%22%3E%3Cpath%20d%3D%22m19.88%206.5a10.47%2010.47%200%200%201%209.59%20-6.5c5.78%200%209.94%204.95%2010.46%2010.84a10.74%2010.74%200%200%201%20-0.34%204.09%2018.1%2018.1%200%200%201%20-5.52%209.2l-14.19%2012.67-14-12.67a18.1%2018.1%200%200%201%20-5.48%20-9.2%2010.81%2010.81%200%200%201%20-0.34%20-4.09c0.53-5.9%204.69-10.84%2010.47-10.84a10.14%2010.14%200%200%201%209.35%206.5z%22%20fill%3D%22%23ccc%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    background-repeat:no-repeat;
+    width: 32px;
+    height: 30px;
+    border-style: none;
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+}
+.btn-like:focus{
+    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2036.8%22%20width%3D%2232%22%20height%3D%2232%22%3E%3Ctitle%3Eicon-like-on%3C%2Ftitle%3E%3Cg%20id%3D%22icon-like-on-Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22icon-like-on-%26%23xB808%3B%26%23xC774%3B%26%23xC5B4%3B_1%22%20data-name%3D%22%26%23xB808%3B%26%23xC774%3B%26%23xC5B4%3B%201%22%3E%3Cpath%20d%3D%22m19.88%206.5a10.47%2010.47%200%200%201%209.59%20-6.5c5.78%200%209.94%204.95%2010.46%2010.84a10.74%2010.74%200%200%201%20-0.34%204.09%2018.1%2018.1%200%200%201%20-5.52%209.2l-14.19%2012.67-14-12.67a18.1%2018.1%200%200%201%20-5.48%20-9.2%2010.81%2010.81%200%200%201%20-0.34%20-4.09c0.53-5.9%204.69-10.84%2010.47-10.84a10.14%2010.14%200%200%201%209.35%206.5z%22%20fill%3D%22%23bf1d1d%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    background-repeat:no-repeat;
+    width: 32px;
+    height: 30px;
+    outline: 0;
+}
+//brand
+.brand-heading{
+    margin-top: 42px;
+    margin-left: $half-gutter-width;
+    margin-bottom: 19px;
+    font-size: 1.2rem;
+}
+.brand-list a{
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding-top: 64px;
+}
+
+.brand-1{
+    background: url(../../images/brand/brand-01.jpg);
+    width: 250px;
+    height: 146px; 
+}
+.brand-2{
+    background: url(../../images/brand/brand-02.jpg);
+    width: 250px;
+    height: 146px; 
+}
+.brand-3{
+    background: url(../../images/brand/brand-03.jpg);
+    width: 250px;
+    height: 146px; 
+}
+.brand-4{
+    background: url(../../images/brand/brand-04.jpg);
+    width: 250px;
+    height: 146px; 
+}
+//new-item
+.new-item-1,{
+    display: block;
+    background: url(../../images/new-items/new-product-01.jpg);
+    width: 230px;
+    height: 210px;
+}
+.new-item-2{
+    display: block;
+    background: url(../../images/new-items/new-product-02.jpg);
+    width: 230px;
+    height: 210px;
+}
+.new-item-3{
+    display: block;
+    background: url(../../images/new-items/new-product-03.jpg);
+    width: 230px;
+    height: 210px;
+}
+.new-item-4{
+    display: block;
+    background: url(../../images/new-items/new-product-04.jpg);
+    width: 230px;
+    height: 210px;
+}
+.new-item-list-1 li:nth-child(2),
+.new-item-list-1 li:nth-child(4),
+.new-item-list-2 li:nth-child(2),
+.new-item-list-2 li:nth-child(4),
+.new-item-list-3 li:nth-child(2),
+.new-item-list-3 li:nth-child(4),
+.new-item-list-4 li:nth-child(2),
+.new-item-list-4 li:nth-child(4),{
+    margin-top: 20px;
+}
+.tip-heading{
+    margin-top: 42px;
+    margin-left: $half-gutter-width;
+    font-size: 1.2rem;
+}
+
+.tip-item{
+    margin-top: 17px;
+}
+.tip-item-1{
+    display: block;
+    background: url(../../images/tip/product-1.jpg);
+    width: 340px;
+    height: 230px;
+}
+.tip-item-2{
+    display: block;
+    background: url(../../images/tip/product-2.jpg);
+    width: 340px;
+    height: 230px;
+}
+.tip-item-3{
+    display: block;
+    background: url(../../images/tip/product-3.jpg);
+    width: 340px;
+    height: 230px;
+}
+//best-review
+.best-review-list-1, .best-review-list-2, .best-review-list-3,
+.best-review-list-4, .best-review-list-5, .best-review-list-6{
+    box-sizing: border-box;
+    width: column-width(2);
+    padding: 20px;
+    border: 1px solid #aaa;
+    width: 160px;
+    height: 336px;
+}
+.best-review-heading{
+    margin-left: $half-gutter-width;
+    font-size: 1.2rem;
+    margin-top: 42px;
+}
+.best-review-1{
+    display: block;
+    background: url(../../images/best-review/bs-product-01.jpg);
+    width: 118px;
+    height: 127px;
+    background-repeat: no-repeat;
+    margin-bottom: 21px;
+}
+.best-review-2{
+    display: block;
+    background: url(../../images/best-review/bs-product-02.jpg);
+    width: 118px;
+    height: 127px;
+    background-repeat: no-repeat;
+    margin-bottom: 21px;
+}
+.best-review-3{
+    display: block;
+    background: url(../../images/best-review/bs-product-03.jpg);
+    width: 118px;
+    height: 127px;
+    background-repeat: no-repeat;
+    margin-bottom: 21px;
+}
+.best-review-4{
+    display: block;
+    background: url(../../images/best-review/bs-product-04.jpg);
+    width: 118px;
+    height: 127px;
+    background-repeat: no-repeat;
+    margin-bottom: 21px;
+}
+.best-review-5{
+    display: block;
+    background: url(../../images/best-review/bs-product-05.jpg);
+    width: 118px;
+    height: 127px;
+    background-repeat: no-repeat;
+    margin-bottom: 21px;
+}
+.best-review-6{
+    display: block;
+    background: url(../../images/best-review/bs-product-06.jpg);
+    width: 118px;
+    height: 127px;
+    background-repeat: no-repeat;
+    margin-bottom: 21px;
+}
+.best-review-list ul li:nth-child(2){
+    font-weight: bold;
+    font-size: 15px;
+}
+.page-info{
+    box-sizing: border-box;
+    height: 42px;
+    background: #555;
+    padding: 13px 0;
+    margin-top: 42px;
+}
+.page-info-list a{
+    box-sizing: border-box;
+    display: block;
+    text-decoration: none;
+    color: #aaa;
+    margin-right: 40px;
+    border: 1px solid #aaa;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    padding: 0 0 0 37px;
+    height: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.page-info-list li:nth-child(1){
+    margin-left: 93px;
+}
+.page-info-list li:nth-child(4) a{
+    padding-right: 37px;
+    border-right: 1px solid #aaa;
+}

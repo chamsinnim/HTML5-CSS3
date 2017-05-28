@@ -1,0 +1,93 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+//숨김 링크 및 숨김 제목
+.a11y-hidden, legend{
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+//header
+.header{
+    padding-top: 40px;
+}
+//logo
+.logo img{
+    width: 180px;
+    height: 62px;
+}
+//info-menu
+.info-menu{
+    list-style: none;
+    padding-top: 25px
+}
+.info-menu li{
+    float: left;
+}
+.info-menu a{
+    text-decoration: none;
+    color: #991717;
+    padding: 20px 21px 0 20px;
+}
+//search-form
+.search-form{
+    border: 1px solid #555656;
+    position: relative;
+    margin-top: 15px;
+}
+.search-form fieldset{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.search-form input{
+    box-sizing: border-box;
+    border: 1px solid #555656;
+    padding: 9px 10px;
+    width: column-width(4.5);
+    height: 38px;
+    color: #aaa;
+}
+.btn-search{
+    border: 0;
+    padding: 32px 0 0 0;
+    overflow: hidden;
+    background: #fff;
+    background-image: url('../../css/sprite/icons/icons.png');
+    background-position:0 -256px;
+    background-repeat:no-repeat;
+    width: 30px; 
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    right: 13px;
+}
+.main-menu{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 110px;
+    margin-bottom: 20px;
+}
+.main-menu a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #4b4b4b;
+    padding: 5px 10px;
+}
+.main-menu a:hover{
+    border-bottom: 1px solid #991717;
+    color: #991717;
+}
+.main-menu a:active{
+    border-radius: 2px;
+    background: #991717;
+    color: #eee;
+}

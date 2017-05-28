@@ -1,0 +1,96 @@
+@import 'sass/base/_base.scss';
+
+//Toggle Grid Module
+// .show-grid
+.#{$toggle-classname} {
+    position: relative;
+}
+.#{$toggle-classname}::before,
+.#{$toggle-classname}::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+.#{$toggle-classname}::before{
+    //지역 변수
+    $leading-limit: $leading - 1;
+
+    z-index: 10000;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(
+                    180deg,
+                    transparent $leading-limit, #0cf $leading-limit);
+    background-size: 1px $leading;
+}
+.#{$toggle-classname}::after{
+    //지역 변수
+    $full-width: $column-width + $gutter-width;
+    z-index: 10010;
+    left: 50%;
+    width: $page-width;
+    background: linear-gradient(
+        90deg,
+        transparent $half-gutter-width, $column-color $half-gutter-width,
+        $column-color $column-width + $half-gutter-width,
+        transparent $column-width + $half-gutter-width);
+    background-size: $full-width 1px;
+    transform: translateX(-50%);
+}
+
+
+//Container Module
+//.container
+.container{
+    width: $page-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//Row Module
+//.row
+.row{
+    &::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+//Nesting Row Module
+//.row.is-nesting
+    &.is-nesting{
+        & > :first-child{ margin-left: 0;}
+        & > :last-child{ margin-right: 0;}
+        }
+//Isolate Row Module
+//격리된 로우(행) 모듈 --> 컬럼에 설정
+    &.is-isolate > .col {
+        margin-right: -100%;
+        }
+}
+
+//Column Module
+//컬럼(열) 모듈
+.col{
+    float: left;
+    margin-left: $half-gutter-width;
+    margin-right: $half-gutter-width;
+}
+
+@for $i from 1 through $columns {
+    .is-#{i}{
+        width: column-width($i);
+    }
+// Offset Module
+// 컬럼 핸들링 모듈
+    .is-isolate > .order-#{$i},
+    .is-isolate > .o-#{$i} {
+        margin-left: order-width($i);
+    }
+}
+
+@for $i from 1 through 100{
+    .gab-#{$i}{
+        margin-bottom: 21px($i);
+    }
+}

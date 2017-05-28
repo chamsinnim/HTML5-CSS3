@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+.button{
+    width: 940px;
+    height: 100vh;
+    background: pink;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 100vh;
+    vertical-align: middle;
+}
+.button [class^="btn"]{
+    background: #fff;
+    padding: 50px;
+    border: 0;
+}
+.btn-1:hover{
+    background: skyblue;
+}
+.btn-2:hover{
+    
+}

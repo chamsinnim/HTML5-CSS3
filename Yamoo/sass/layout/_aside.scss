@@ -1,0 +1,118 @@
+@import 'grid';
+//filter
+.filter{
+    border-top: 2px solid #991717;
+}
+.filter{
+    width: 100%;
+    background: #eee;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+}
+.filter-heading{
+    text-align: center;
+    margin-top: 10px;
+    color: #991717;
+    cursor: pointer;
+}
+.filter-heading::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 540px;
+    background: url('../../css/sprite/icons/icons.png');
+    background-position: 0 -96px;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+}
+.filter:hover{
+    height: 230px;
+}
+.ages-style{
+    width: $page-width;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+.ages-form{
+    margin-top: 12px;
+}
+.ages-form label{
+    color: #fff;
+    margin-left: 10px;
+    padding: 0 22px;
+    border: 1px solid #555656;
+    border-radius: 3px;
+    background: #555656;
+    cursor: pointer;
+}
+.ages-form label:focus,
+.ages-form label:hover{
+    color: #fff;
+    border: 1px solid #991717;
+    background: #991717
+}
+.ages-form input[type="checkbox"]{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.style-form{
+    margin-top: 22px;
+}
+.style-form label{
+    color: #4b4b4b;
+}
+.style-form input[type="checkbox"]{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.style-form label{
+    color: #fff;
+    margin-left: 10px;
+    padding: 0 22px;
+    border: 1px solid #555656;
+    border-radius: 3px;
+    background: #555656;
+    cursor: pointer;
+}
+
+.style-form label:focus,
+.style-form label:hover{
+    color: #fff;
+    border: 1px solid #991717;
+    background: #991717
+}
+
+.select-form{
+    margin-top: 56px;
+    text-align: center;
+}
+.select-form input[type="checkbox"]{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.select-form label{
+    color: #fff;
+    margin-left: 10px;
+    padding: 7px 22px;
+    border: 1px solid #555656;
+    border-radius: 20px;
+    background: #555656;
+    cursor: pointer;
+}
+
+.select-form label:focus,
+.select-form label:hover{
+    color: #fff;
+    border: 1px solid #991717;
+    background: #991717
+}
+
